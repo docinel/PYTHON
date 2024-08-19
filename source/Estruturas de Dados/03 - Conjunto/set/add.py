@@ -1,0 +1,11 @@
+sorteio = {1, 23}
+sorteio.add(5)
+print(sorteio)
+sorteio.add(28)
+print(sorteio)
+sorteio.add(28)
+print(sorteio)
+print('---' * 10)
+print(sorted(sorteio))
+sorteio.clear()
+print(sorteio)
