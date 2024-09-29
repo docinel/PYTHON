@@ -1,0 +1,15 @@
+def somar(a, b):
+    return a + b
+
+
+def subtrair(a, b):
+    return a - b
+
+
+def exibir_resultado(a, b, funcao):
+    resultado = funcao(a, b)
+    print(f"{a} {funcao.__name__} {b} == {resultado}")
+
+
+exibir_resultado(20, 20, somar)
+exibir_resultado(20, 20, subtrair)

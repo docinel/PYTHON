@@ -1,8 +1,8 @@
 menu = """
-[0] Depositar
-[1] Sacar
-[2] Extrato
-[3] Sair
+[d] Depositar
+[s] Sacar
+[e] Extrato
+[q] Sair
 """
 print(menu)
 
@@ -14,14 +14,14 @@ LIMITE_SAQUES = 3
 
 while True:
     opcao = input("menu: ")
-    if opcao == "0":
+    if opcao == "d":
         valor = float(input("Quanto deseja depositar? "))
         if valor > 0:
             saldo += valor
             extrato += f"Depósito: R$ {valor:.2f}\n"
         else:
             print("Operação falhou! O valor informado é inválido.")
-    elif opcao == "1":
+    elif opcao == "s":
         valor = float(input("Quanto deseja sacar? "))
         excedeu_saldo = valor > saldo
         excedeu_limite = valor > limite
@@ -38,12 +38,12 @@ while True:
             numero_saques += 1
         else:
             print("Operação falhou! O valor informado é inválido.")
-    elif opcao == "2":
+    elif opcao == "e":
         print("\n========================= EXTRATO ==========================")
         print("Não foram realizadas movimentações." if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("==============================================================")
-    elif opcao == "3":
+    elif opcao == "q":
         break
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
