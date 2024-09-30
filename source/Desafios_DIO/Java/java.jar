@@ -1,0 +1,33 @@
+// Faça um programa que calcule e impra o salário a ser transferido para um funcionário.
+// Para realizar o cálculo receba o valor bruto do salário e o adicional dos benefícios.
+// O salário a ser transferido é calculado da seguinte forma:
+// Valor bruto do salário - percentual de imposto mediante ao salário + adicional dos benefícios.
+// Para calcular o percentual de imposto, considere os seguintes critérios:
+// De R$ 0.00 a R$ 1100.00 o percentual de imposto é de 5%;
+// De R$ 1100.01 a R$ 2500.00 o percentual de imposto é de 10%;
+// De R$ 2500.01 a R$ 3500.00 o percentual de imposto é de 15%;
+// Acima de R$ 3500.00 o percentual de imposto é de 20%.
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double salary = input.nextDouble();
+        double benefits = input.nextDouble();
+        double percentage = 0.0;
+        if (salary < 1100.0) {
+            percentage = 0.05;
+        } else if (salary < 2500.0) {
+            percentage = 0.10;
+        } else if (salary < 3500.0) {
+            percentage = 0.15;
+        } else {
+            percentage = 0.20;
+        }
+        double salaryTransfer = salary - (salary * percentage) + benefits;
+        System.out.println(String.format("R$ %.2f",  salaryTransfer);
+    }
+}
+
